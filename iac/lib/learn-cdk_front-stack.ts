@@ -39,7 +39,7 @@ export class LearnCdkFrontStack extends cdk.Stack {
         sid: "learn-cdk-s3BucketPublicRead",
         effect: cdk.aws_iam.Effect.ALLOW,
         actions: ["s3:GetObject"],
-        principals: [new cdk.aws_iam.AnyPrincipal()],
+        principals: [new cdk.aws_iam.ArnPrincipal('*')],
         resources: [`${staticWebsiteBucket.bucketArn}/*`],
       })
     );
